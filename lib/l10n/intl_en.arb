@@ -1,0 +1,7 @@
+{
+  "@@locale": "en",
+  "somethingWentWrong": "Something went wrong",
+  "noInternet": "No Internet. Check your connection and try again.",
+  "badResponseFormat": "Bad response format: {error}",
+  "appTitle": "Weather App"
+}
