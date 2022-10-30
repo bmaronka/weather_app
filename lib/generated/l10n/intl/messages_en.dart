@@ -26,9 +26,23 @@ class MessageLookup extends MessageLookupByLibrary {
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "appTitle": MessageLookupByLibrary.simpleMessage("Weather App"),
         "badResponseFormat": m0,
+        "cityNameError":
+            MessageLookupByLibrary.simpleMessage("City name incorrect"),
+        "currentWeather":
+            MessageLookupByLibrary.simpleMessage("Current Weather"),
+        "enableLocationService": MessageLookupByLibrary.simpleMessage(
+            "Please enable the location service"),
+        "forecastWeather":
+            MessageLookupByLibrary.simpleMessage("Forecast Weather"),
+        "getWeather": MessageLookupByLibrary.simpleMessage("Get weather"),
+        "locationPermissionRequired": MessageLookupByLibrary.simpleMessage(
+            "Location permission is required to correctly show weather"),
         "noInternet": MessageLookupByLibrary.simpleMessage(
             "No Internet. Check your connection and try again."),
+        "retry": MessageLookupByLibrary.simpleMessage("Retry"),
         "somethingWentWrong":
-            MessageLookupByLibrary.simpleMessage("Something went wrong")
+            MessageLookupByLibrary.simpleMessage("Something went wrong"),
+        "typeCityNameInEnglish":
+            MessageLookupByLibrary.simpleMessage("Type city name in english")
       };
 }

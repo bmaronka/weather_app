@@ -19,51 +19,49 @@ class _WeatherClient implements WeatherClient {
   String? baseUrl;
 
   @override
-  Future<void> getCurrentWeather(city) async {
+  Future<CurrentWeatherDto> getCurrentWeather(city) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{r'q': city};
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
-    await _dio.fetch<void>(_setStreamType<void>(Options(
+    final _result = await _dio
+        .fetch<Map<String, dynamic>>(_setStreamType<CurrentWeatherDto>(Options(
       method: 'GET',
       headers: _headers,
       extra: _extra,
     )
-        .compose(
-          _dio.options,
-          'current.json?key=b8000cd59a714ed89f6150517222410&aqi=no',
-          queryParameters: queryParameters,
-          data: _data,
-        )
-        .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
-    return null;
+            .compose(
+              _dio.options,
+              'current.json?key=b8000cd59a714ed89f6150517222410&aqi=no',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
+    final value = CurrentWeatherDto.fromJson(_result.data!);
+    return value;
   }
 
   @override
-  Future<void> getFutureWeather(
-    city,
-    date,
-  ) async {
+  Future<ForecastWeatherDto> getForecastWeather(city) async {
     const _extra = <String, dynamic>{};
-    final queryParameters = <String, dynamic>{
-      r'q': city,
-      r'dt': date,
-    };
+    final queryParameters = <String, dynamic>{r'q': city};
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
-    await _dio.fetch<void>(_setStreamType<void>(Options(
+    final _result = await _dio
+        .fetch<Map<String, dynamic>>(_setStreamType<ForecastWeatherDto>(Options(
       method: 'GET',
       headers: _headers,
       extra: _extra,
     )
-        .compose(
-          _dio.options,
-          'future.json?key=b8000cd59a714ed89f6150517222410',
-          queryParameters: queryParameters,
-          data: _data,
-        )
-        .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
-    return null;
+            .compose(
+              _dio.options,
+              'forecast.json?key=b8000cd59a714ed89f6150517222410&days=2&aqi=no&alerts=no',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
+    final value = ForecastWeatherDto.fromJson(_result.data!);
+    return value;
   }
 
   RequestOptions _setStreamType<T>(RequestOptions requestOptions) {

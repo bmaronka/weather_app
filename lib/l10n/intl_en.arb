@@ -3,5 +3,13 @@
   "somethingWentWrong": "Something went wrong",
   "noInternet": "No Internet. Check your connection and try again.",
   "badResponseFormat": "Bad response format: {error}",
-  "appTitle": "Weather App"
+  "appTitle": "Weather App",
+  "currentWeather": "Current Weather",
+  "forecastWeather": "Forecast Weather",
+  "retry": "Retry",
+  "enableLocationService": "Please enable the location service",
+  "locationPermissionRequired": "Location permission is required to correctly show weather",
+  "getWeather": "Get weather",
+  "typeCityNameInEnglish": "Type city name in english",
+  "cityNameError": "City name incorrect"
 }

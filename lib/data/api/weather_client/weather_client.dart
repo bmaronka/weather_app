@@ -2,6 +2,8 @@ import 'package:dio/dio.dart';
 import 'package:injectable/injectable.dart';
 import 'package:retrofit/http.dart';
 import 'package:weather_app/data/api/network_endpoints.dart';
+import 'package:weather_app/data/model/current_weather_dto/current_weather_dto.dart';
+import 'package:weather_app/data/model/forecast_weather_dto/forecast_weather_dto.dart';
 
 part 'weather_client.g.dart';
 
@@ -12,11 +14,8 @@ abstract class WeatherClient {
   factory WeatherClient(Dio dio) = _WeatherClient;
 
   @GET(NetworkEndpoints.current)
-  Future<void> getCurrentWeather(@Query('q') String city);
+  Future<CurrentWeatherDto> getCurrentWeather(@Query('q') String city);
 
-  @GET(NetworkEndpoints.future)
-  Future<void> getFutureWeather(
-    @Query('q') String city,
-    @Query('dt') String date,
-  );
+  @GET(NetworkEndpoints.forecast)
+  Future<ForecastWeatherDto> getForecastWeather(@Query('q') String city);
 }

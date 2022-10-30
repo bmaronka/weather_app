@@ -4,5 +4,5 @@ class NetworkEndpoints {
   //Weather
   static const current = 'current.json?key=$_weatherApiKey&aqi=no';
 
-  static const future = 'future.json?key=$_weatherApiKey';
+  static const forecast = 'forecast.json?key=$_weatherApiKey&days=2&aqi=no&alerts=no';
 }

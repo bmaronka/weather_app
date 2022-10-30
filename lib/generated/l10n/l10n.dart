@@ -89,6 +89,86 @@ class Strings {
       args: [],
     );
   }
+
+  /// `Current Weather`
+  String get currentWeather {
+    return Intl.message(
+      'Current Weather',
+      name: 'currentWeather',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Forecast Weather`
+  String get forecastWeather {
+    return Intl.message(
+      'Forecast Weather',
+      name: 'forecastWeather',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Retry`
+  String get retry {
+    return Intl.message(
+      'Retry',
+      name: 'retry',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enable the location service`
+  String get enableLocationService {
+    return Intl.message(
+      'Please enable the location service',
+      name: 'enableLocationService',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Location permission is required to correctly show weather`
+  String get locationPermissionRequired {
+    return Intl.message(
+      'Location permission is required to correctly show weather',
+      name: 'locationPermissionRequired',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Get weather`
+  String get getWeather {
+    return Intl.message(
+      'Get weather',
+      name: 'getWeather',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Type city name in english`
+  String get typeCityNameInEnglish {
+    return Intl.message(
+      'Type city name in english',
+      name: 'typeCityNameInEnglish',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `City name incorrect`
+  String get cityNameError {
+    return Intl.message(
+      'City name incorrect',
+      name: 'cityNameError',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<Strings> {
