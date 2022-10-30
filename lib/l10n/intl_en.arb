@@ -11,5 +11,11 @@
   "locationPermissionRequired": "Location permission is required to correctly show weather",
   "getWeather": "Get weather",
   "typeCityNameInEnglish": "Type city name in english",
-  "cityNameError": "City name incorrect"
+  "cityNameError": "City name incorrect",
+  "temperature": "Temperature",
+  "temperatureValue": "{temperature}°C",
+  "wind": "Wind",
+  "windValue": "{wind} kph",
+  "avgTemperature": "Avg\ntemperature",
+  "maxWind": "Max wind"
 }

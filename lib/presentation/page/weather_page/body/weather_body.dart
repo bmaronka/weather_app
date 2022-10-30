@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:weather_app/domain/model/current_weather/current_weather.dart';
 import 'package:weather_app/domain/model/forecast_weather/forecast_weather.dart';
 import 'package:weather_app/generated/l10n/l10n.dart';
+import 'package:weather_app/presentation/page/weather_page/widgets/current_weather_tab.dart';
+import 'package:weather_app/presentation/page/weather_page/widgets/forecast_weather_tab.dart';
 import 'package:weather_app/presentation/style/colors.dart';
 
 class WeatherBody extends StatelessWidget {
@@ -20,7 +22,7 @@ class WeatherBody extends StatelessWidget {
         child: Column(
           children: [
             _buildTabs(context),
-            Expanded(child: _buildTabViews(context)),
+            _buildTabViews(context),
           ],
         ),
       );
@@ -41,10 +43,12 @@ class WeatherBody extends StatelessWidget {
         ),
       );
 
-  Widget _buildTabViews(BuildContext context) => const TabBarView(
-        children: [
-          SizedBox(),
-          SizedBox(),
-        ],
+  Widget _buildTabViews(BuildContext context) => Expanded(
+        child: TabBarView(
+          children: [
+            CurrentWeatherTab(currentWeather: currentWeather),
+            ForecastWeatherTab(forecastWeather: forecastWeather),
+          ],
+        ),
       );
 }

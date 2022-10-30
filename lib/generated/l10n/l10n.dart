@@ -169,6 +169,66 @@ class Strings {
       args: [],
     );
   }
+
+  /// `Temperature`
+  String get temperature {
+    return Intl.message(
+      'Temperature',
+      name: 'temperature',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `{temperature}°C`
+  String temperatureValue(Object temperature) {
+    return Intl.message(
+      '$temperature°C',
+      name: 'temperatureValue',
+      desc: '',
+      args: [temperature],
+    );
+  }
+
+  /// `Wind`
+  String get wind {
+    return Intl.message(
+      'Wind',
+      name: 'wind',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `{wind} kph`
+  String windValue(Object wind) {
+    return Intl.message(
+      '$wind kph',
+      name: 'windValue',
+      desc: '',
+      args: [wind],
+    );
+  }
+
+  /// `Avg\ntemperature`
+  String get avgTemperature {
+    return Intl.message(
+      'Avg\ntemperature',
+      name: 'avgTemperature',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Max wind`
+  String get maxWind {
+    return Intl.message(
+      'Max wind',
+      name: 'maxWind',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<Strings> {

@@ -22,9 +22,15 @@ class MessageLookup extends MessageLookupByLibrary {
 
   static String m0(error) => "Bad response format: ${error}";
 
+  static String m1(temperature) => "${temperature}°C";
+
+  static String m2(wind) => "${wind} kph";
+
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "appTitle": MessageLookupByLibrary.simpleMessage("Weather App"),
+        "avgTemperature":
+            MessageLookupByLibrary.simpleMessage("Avg\ntemperature"),
         "badResponseFormat": m0,
         "cityNameError":
             MessageLookupByLibrary.simpleMessage("City name incorrect"),
@@ -37,12 +43,17 @@ class MessageLookup extends MessageLookupByLibrary {
         "getWeather": MessageLookupByLibrary.simpleMessage("Get weather"),
         "locationPermissionRequired": MessageLookupByLibrary.simpleMessage(
             "Location permission is required to correctly show weather"),
+        "maxWind": MessageLookupByLibrary.simpleMessage("Max wind"),
         "noInternet": MessageLookupByLibrary.simpleMessage(
             "No Internet. Check your connection and try again."),
         "retry": MessageLookupByLibrary.simpleMessage("Retry"),
         "somethingWentWrong":
             MessageLookupByLibrary.simpleMessage("Something went wrong"),
+        "temperature": MessageLookupByLibrary.simpleMessage("Temperature"),
+        "temperatureValue": m1,
         "typeCityNameInEnglish":
-            MessageLookupByLibrary.simpleMessage("Type city name in english")
+            MessageLookupByLibrary.simpleMessage("Type city name in english"),
+        "wind": MessageLookupByLibrary.simpleMessage("Wind"),
+        "windValue": m2
       };
 }

@@ -4,7 +4,7 @@ class Condition {
   Condition(this.icon);
 
   factory Condition.fromConditionDto(ConditionDto conditionDto) => Condition(
-        conditionDto.icon,
+        'https:${conditionDto.icon}',
       );
 
   final String icon;

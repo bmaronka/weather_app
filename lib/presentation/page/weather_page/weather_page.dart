@@ -44,6 +44,7 @@ class _PageState extends State<_Page> {
 
   @override
   Widget build(BuildContext context) => Scaffold(
+        backgroundColor: AppColors.white,
         appBar: AppBar(
           backgroundColor: AppColors.green,
           title: Text(Strings.of(context).appTitle),
@@ -105,7 +106,7 @@ class _PageState extends State<_Page> {
             SizedBox(height: Dimens.l),
             _Button(
               title: Strings.of(context).getWeather,
-              onTap: () => context.read<WeatherCubit>().fetchWeather(_controller.text),
+              onTap: () => context.read<WeatherCubit>().fetchWeather(_controller.text.trim()),
             )
           ],
         ),
